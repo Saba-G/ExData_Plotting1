@@ -3,9 +3,9 @@ sub1 <- read.csv2.sql("household_power_consumption.txt",sql="SELECT * FROM file 
 datetime <- paste(sub1$Date, sub1$Time, sep= " ")
 x <- strptime(datetime, format= "%d/%m/%Y %H:%M:%S")
 
-png(filename = "plot4.png", width=480, height=480)
+png(filename = "plot4.png", width=480, height=480, bg="transparent")
 par(mfrow=c(2,2))
-par(mar=c(5,5,4,1))
+par(mar=c(5,4,4,2))
 
 with(sub1, {
         plot(x, sub1$Global_active_power, type="l", xlab="", ylab="Global_active_power")

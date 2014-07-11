@@ -3,8 +3,8 @@ sub1 <- read.csv2.sql("household_power_consumption.txt",sql="SELECT * FROM file 
 datetime <- paste(sub1$Date, sub1$Time, sep= " ")
 x <- strptime(datetime, format= "%d/%m/%Y %H:%M:%S")
 y <- sub1$Sub_metering_1
-png(filename = "plot3.png", width=480, height=480)
-par(mar=c(4,6,2,2))
+png(filename = "plot3.png", width=480, height=480, bg="transparent")
+par(mar=c(5,4,4,2))
 with(sub1, plot(x, y, xlab="", ylab= "Energy sub metering", type= "n"))
 
 with(sub1, lines(x,sub1$Sub_metering_1))
