@@ -1,0 +1,7 @@
+library(sqldf) 
+sub1 <- read.csv2.sql("household_power_consumption.txt",sql="SELECT * FROM file WHERE Date='1/2/2007' OR Date='2/2/2007'",sep=";",na.strings="?" )
+x <- as.numeric(sub1$Global_active_power)
+png(filename = "plot1.png", width=480, height=480)
+par(mar=c(5,6,4,2))
+hist(x, col ="red", main = "Global Active Power", xlab= "Global Active Power (kilowatts)", ylab= "Frequency")
+dev.off()
